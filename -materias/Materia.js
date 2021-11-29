@@ -1,5 +1,4 @@
 
-
 export default class Materia{
     constructor(tr){
         this.nivel=tr.children[0].innerHTML;
@@ -18,6 +17,7 @@ export default class Materia{
         this.plan=tr.children[3].innerHTML;
     }
 
+    //MOVER A UNA SUBCLASE
     renglonAprobadas(){
         return `
         <tr class="textoTabla">

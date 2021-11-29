@@ -13,9 +13,9 @@
 
   "web_accessible_resources": [
     "main.js",
-    "Materia.js",
-    "Conjunto_materias.js",
-    "Materias_Todas.js"
+    "-materias/Materia.js",
+    "-conjuntosMaterias/Conjunto_materias.js",
+    "-conjuntosMaterias/Materias_Todas.js"
  ],
 
 

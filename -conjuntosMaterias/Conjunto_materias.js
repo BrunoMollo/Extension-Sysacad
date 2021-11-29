@@ -1,20 +1,13 @@
-import Materia from "./Materia.js";
+import Materia from "../-materias/Materia.js";
 export default class Conjunto_materias extends Array{
     constructor(){
         super();
     }
 
-    Todas(){
-        let trs=document.querySelectorAll("tr .textoTabla");
-        for(let i=1; i<trs.length; i++){
-            this.push(new Materia(trs[i]));
-        }
-    }
-
     mostrarTodas(){
         this.forEach(x=>console.log(x));
     }
-
+    //MOVIBLE A UNA SUBCLASE
     subconjunto(estado, nivel){
         let sub=new Conjunto_materias("vacio");
         this.forEach(
