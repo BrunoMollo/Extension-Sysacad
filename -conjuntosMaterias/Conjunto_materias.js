@@ -48,13 +48,14 @@ export default class Conjunto_materias extends Array{
             </tr>
             
             <tr><td bgcolor="#0000FF">
-                <table width="100%" cellpadding="4" cellspacing="1" border="0">
+                <table width="100%" cellpadding="4" cellspacing="1" border="0" >
                     <tbody>
                     <tr><td>
                         <table width="100%" align="center" border="1" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
                             <tbody>
                             <tr class="textoTabla">
-                                <th>Materia</th><th>Nota</th>
+                                <th width="300px">Materia</th>
+                                <th width="60px">Nota</th>
                             </tr>
         
                                 ${this.renglonesAprobados()}
