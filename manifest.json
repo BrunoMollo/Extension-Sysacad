@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Sysacad Extension",
+  "description": "Disminuye el ardor de ojos",
+  "version": "1.0",
+  "icons": {
+    "16": "utn.png",
+    "48": "utn.png",
+    "128": "utn.png"
+  },
+
+  
+
+  "web_accessible_resources": [
+    "main.js",
+    "Materia.js",
+    "Conjunto_materias.js",
+    "Materias_Todas.js"
+ ],
+
+
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://www.alumnos.frro.utn.edu.ar/estadoAcademico.asp*"],
+      "js": ["mainLoader.js"]
+    },
+ 
+    {
+      "run_at": "document_end",
+      "matches": ["file:///C:/Users/Bruno/Desktop/EsadoAcademico%20Local/Estado%20acad%C3%A9mico.html"],
+      "js": ["mainLoader.js"]
+    }
+
+  ]
+}
