@@ -33,7 +33,7 @@ export function main(){
 
     
     for(let i=0; i<=5 ;i++){
-        todas.subconjunto("-",i).TablaAprobadasBeta(`Aprobadas ${i}°`);
+        todas.subconjunto("-",i).TablaAprobadas(`Aprobadas ${i}°`);
     }
 
 
