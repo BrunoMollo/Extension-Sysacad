@@ -4,6 +4,7 @@ export default class Materia{
         this.nivel=tr.children[0].innerHTML;
         this.nombre=tr.children[1].innerHTML;
         this.estado=tr.children[2].innerHTML.split(' ')[0];
+        this.nota='   ';
         if(this.estado=='Aprobada'){
             this.nota='A';
             if(this.nivel>'0'){
@@ -18,13 +19,22 @@ export default class Materia{
     }
 
     //MOVER A UNA SUBCLASE
-    renglonAprobadas(){
-        return `
-        <tr class="textoTabla">
-            <td>${this.nombre}</td>
-            <td>${this.nota}</td>
-        </tr>
-        `
+    renglonAprobada(){
+        const renglon=document.createElement("tr");
+        renglon.classList.add("textoTabla");
+        
+        const td_nombre= document.createElement("td");
+        td_nombre.innerText=this.nombre;
+        renglon.appendChild(td_nombre);
+
+        const td_nota= document.createElement("td");
+        td_nota.classList.add("td-nota");
+        td_nota.innerText=this.nota;
+        renglon.appendChild(td_nota);
+
+
+
+        return renglon;
 
     }
 

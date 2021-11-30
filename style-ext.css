@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bloke{
+    max-width: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+td{
+    padding: 10px;
+    border: black 2px solid;
+    margin:0;
+    min-width: 44px;
+}
+
+table{
+    width: 100%;
+    border: black 2px solid;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.wrapper-tabla {
+    width: 100%;
+    height: auto;
+    display: flex; 
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.td-nota {
+    text-align: center;
+}
+
+.td-nota:hover{
+   
+}

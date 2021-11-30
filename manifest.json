@@ -15,7 +15,8 @@
     "main.js",
     "-materias/Materia.js",
     "-conjuntosMaterias/Conjunto_materias.js",
-    "-conjuntosMaterias/Materias_Todas.js"
+    "-conjuntosMaterias/Materias_Todas.js",
+    "style-ext.css"
  ],
 
 

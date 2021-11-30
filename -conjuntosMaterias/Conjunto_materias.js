@@ -7,7 +7,6 @@ export default class Conjunto_materias extends Array{
     mostrarTodas(){
         this.forEach(x=>console.log(x));
     }
-    //MOVIBLE A UNA SUBCLASE
     subconjunto(estado, nivel){
         let sub=new Conjunto_materias("vacio");
         this.forEach(
@@ -25,7 +24,7 @@ export default class Conjunto_materias extends Array{
             });
         return sub;
     }
-
+    //MOVIBLE A UNA SUBCLASE
     renglonesAprobados(){
         let acum='';
         this.forEach(m=>acum=acum+m.renglonAprobadas());
@@ -72,4 +71,32 @@ export default class Conjunto_materias extends Array{
         
     }
 
+
+    TablaAprobadasBeta(texto_titulo){
+        const wrap_tabla=document.querySelector(".wrapper-tabla");
+        
+        const bloke=document.createElement("div");
+        bloke.classList.add("bloke");
+
+        bloke.style.display="inline";
+        bloke.style.margin="10px";
+
+        const titulo=document.createElement("div");
+        titulo.innerText=texto_titulo;
+        titulo.classList.add("tituloTabla");
+        
+        const tabla=document.createElement("table");
+        this.forEach(materia=>tabla.appendChild(materia.renglonAprobada()));
+        
+
+
+        
+        bloke.appendChild(titulo);
+        bloke.appendChild(tabla);
+        wrap_tabla.appendChild(bloke);
+        
+    }
+
 }
+
+
