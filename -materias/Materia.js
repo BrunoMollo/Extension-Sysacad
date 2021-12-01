@@ -22,6 +22,22 @@ export default class Materia{
         this.plan=tr.children[3].innerHTML;
     }
 
+    static Create_td_head(atributo){
+        const td= document.createElement("td");
+        td.classList.add(`td-head`);
+        td.innerText=atributo;
+        return td;
+    }
+
+    static Create_head(atributos){
+        const head=document.createElement("tr")
+        atributos.forEach(atri => {
+            head.appendChild(Materia.Create_td_head(atri));
+        });
+        return head;
+    }
+
+
     create_td(atributo){
         const td= document.createElement("td");
         td.classList.add(`td-${atributo}`);
@@ -29,11 +45,12 @@ export default class Materia{
         return td;
     }
 
-    //MOVER A UNA SUBCLASE
+    //MOVER A UNA SUBCLASE???
     renglonAprobada(){
         const renglon=document.createElement("tr");
         renglon.classList.add("textoTabla");
         
+
         renglon.appendChild(this.create_td("nombre"));
         renglon.appendChild(this.create_td("nota"));
         renglon.appendChild(this.create_td("folio"));

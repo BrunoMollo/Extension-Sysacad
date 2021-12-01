@@ -15,7 +15,7 @@ export function main(){
 
     
     for(let i=0; i<=5 ;i++){
-        todas.subconjunto("-",i).TablaAprobadas(`Aprobadas ${i}°`);
+        todas.subconjunto("-",i).TablaAprobadas(`${i}°`);
     }
 
 

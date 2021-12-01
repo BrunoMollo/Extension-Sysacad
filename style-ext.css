@@ -5,23 +5,28 @@
 }
 
 .bloke{
-    max-width: 400px;
-    width: 400px;
+    width: 600px;
     display: flex;
     flex-direction: column;
 }
 
+
+
 td{
-    padding: 10px;
+    padding: 2px;
     border: black 2px solid;
     margin:0;
     min-width: 44px;
 }
 
 table{
+    display: inline-table;
+    transition: 1s all ease;
     width: 100%;
     border: black 2px solid;
+    transition: visibility 0s, opacity 0.5s linear;
 }
+
 
 .wrapper{
     display: flex;
@@ -33,15 +38,15 @@ table{
     width: 100%;
     height: auto;
     display: flex; 
-    flex-direction: row;
-    gap: 50px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
 
 .td-nota {
     text-align: center;
 }
 
-.td-nota:hover{
-   
+.td-head{
+    font-weight: 1000;
 }

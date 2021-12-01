@@ -3,7 +3,7 @@ export default class Conjunto_materias extends Array{
     constructor(){
         super();
     }
-
+ 
     mostrarTodas(){
         this.forEach(x=>console.log(x));
     }
@@ -37,16 +37,38 @@ export default class Conjunto_materias extends Array{
         titulo.innerText=texto_titulo;
         titulo.classList.add("tituloTabla");
         
+        
         const tabla=document.createElement("table");
+        tabla.classList.add(`tabla-aprob`);
+        tabla.appendChild(Materia.Create_head(["Nombre", "Nota", "Folio", "Tomo"]));
         this.forEach(materia=>tabla.appendChild(materia.renglonAprobada()));
         
 
         bloke.appendChild(titulo);
         bloke.appendChild(tabla);
         wrap_tabla.appendChild(bloke);
-        
     }
 
 }
 
+////LA CONCHA DE MI MADREEEEEEEEEEEEEEEE
+// function toggleView(x){
+
+
+
+    
+//     for(let i=0;i<x.children.length;i++){
+//         let renglon=x.children.item(i);
+//         console.log(renglon.hidden==true);
+
+//         if(renglon.hidden){
+//             renglon.removeAttribute("hidden");
+//         }
+//         else{
+//             renglon.hidden="true";
+//         }
+//         sleep(100);
+
+//     }
+// }
 
