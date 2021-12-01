@@ -5,6 +5,10 @@ export default class Materia{
         this.nombre=tr.children[1].innerHTML;
         this.estado=tr.children[2].innerHTML.split(' ')[0];
         this.nota='   ';
+        this.tomo='   ';
+        this.folio='   ';
+        this.horas='   ';
+
         if(this.estado=='Aprobada'){
             this.nota='A';
             if(this.nivel>'0'){
@@ -18,22 +22,23 @@ export default class Materia{
         this.plan=tr.children[3].innerHTML;
     }
 
+    create_td(atributo){
+        const td= document.createElement("td");
+        td.classList.add(`td-${atributo}`);
+        td.innerText=this[atributo];
+        return td;
+    }
+
     //MOVER A UNA SUBCLASE
     renglonAprobada(){
         const renglon=document.createElement("tr");
         renglon.classList.add("textoTabla");
         
-        const td_nombre= document.createElement("td");
-        td_nombre.innerText=this.nombre;
-        renglon.appendChild(td_nombre);
-
-        const td_nota= document.createElement("td");
-        td_nota.classList.add("td-nota");
-        td_nota.innerText=this.nota;
-        renglon.appendChild(td_nota);
-
-
-
+        renglon.appendChild(this.create_td("nombre"));
+        renglon.appendChild(this.create_td("nota"));
+        renglon.appendChild(this.create_td("folio"));
+        renglon.appendChild(this.create_td("tomo"));
+        
         return renglon;
 
     }

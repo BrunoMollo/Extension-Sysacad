@@ -32,9 +32,7 @@ export default class Conjunto_materias extends Array{
         const bloke=document.createElement("div");
         bloke.classList.add("bloke");
 
-        bloke.style.display="inline";
-        bloke.style.margin="10px";
-
+        
         const titulo=document.createElement("div");
         titulo.innerText=texto_titulo;
         titulo.classList.add("tituloTabla");
