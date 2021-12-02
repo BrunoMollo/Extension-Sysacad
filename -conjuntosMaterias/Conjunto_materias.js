@@ -42,6 +42,15 @@ export default class Conjunto_materias extends Array{
         tabla.classList.add(`tabla-aprob`);
         tabla.appendChild(Materia.Create_head(["Nombre", "Nota", "Folio", "Tomo"]));
         this.forEach(materia=>tabla.appendChild(materia.renglonAprobada()));
+
+        bloke.style.maxHeight="38px";//en el css lo toma como vacio, asi que lo asigno aca¿?
+        titulo.onclick=(()=>{
+            if(bloke.style.maxHeight=="38px"){
+                bloke.style.maxHeight=(50*tabla.childElementCount)+"px";
+            }else{
+                bloke.style.maxHeight="38px";
+            }
+        })
         
 
         bloke.appendChild(titulo);
@@ -50,25 +59,3 @@ export default class Conjunto_materias extends Array{
     }
 
 }
-
-////LA CONCHA DE MI MADREEEEEEEEEEEEEEEE
-// function toggleView(x){
-
-
-
-    
-//     for(let i=0;i<x.children.length;i++){
-//         let renglon=x.children.item(i);
-//         console.log(renglon.hidden==true);
-
-//         if(renglon.hidden){
-//             renglon.removeAttribute("hidden");
-//         }
-//         else{
-//             renglon.hidden="true";
-//         }
-//         sleep(100);
-
-//     }
-// }
-

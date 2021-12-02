@@ -11,11 +11,11 @@ export function main(){
 
     const wrap_tabla=document.createElement("div");
     wrap_tabla.classList.add("wrapper-tabla");
-    wrap.appendChild(wrap_tabla);
+    wrap.insertBefore(wrap_tabla, document.querySelector(".wrapper>p"));
 
     
     for(let i=0; i<=5 ;i++){
-        todas.subconjunto("-",i).TablaAprobadas(`${i}°`);
+        todas.subconjunto("-",i).TablaAprobadas((i==0)?'Ingreso':`${i}° Año`);
     }
 
 
