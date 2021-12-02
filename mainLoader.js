@@ -1,3 +1,5 @@
+
+
 //Este codigo es para que el script se cargue como type='module', pq sino no puede usar el import
 (async () => {
     
@@ -8,8 +10,9 @@
     linker.href=chrome.extension.getURL("./style-ext.css");
     document.body.appendChild(linker);
 
+
     //importa js
-    const src = chrome.extension.getURL('./main.js');
-    const contentScript = await import(src);
+    const src_js = chrome.extension.getURL('./main.js');
+    const contentScript = await import(src_js);
     contentScript.main();
   })();

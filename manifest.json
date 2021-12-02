@@ -9,14 +9,14 @@
     "128": "utn.png"
   },
 
-  
+
 
   "web_accessible_resources": [
     "main.js",
-    "-materias/Materia.js",
-    "-conjuntosMaterias/Conjunto_materias.js",
-    "-conjuntosMaterias/Materias_Todas.js",
-    "style-ext.css"
+    "Materia.js",
+    "Conjunto_materias.js",
+    "style-ext.css",
+    "diccionario_reemplazo.json"
  ],
 
 

@@ -8,16 +8,18 @@ header{
     height: 50vh;
 }
 
+.textoTabla{
+    background-color: white;
+}
+
 .bloke{
-    width: 600px;
+    width: 760px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     max-height: 38px;
     transition: max-height 100ms ease-in;
 }
-
-
 
 
 td{
