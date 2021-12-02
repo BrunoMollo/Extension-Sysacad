@@ -9,8 +9,6 @@ function borrarTablaVieja(){
 
 
 
-
-
 //Tengo que hacer una fucnion principal y expostral para poder  modularizar el codigo
 export function main(){
 
@@ -26,23 +24,23 @@ export function main(){
     
 
     wrap_tabla.appendChild(
-        todas.subconjunto({"estado":"Cursa"}).crearTabla("Cursando", ['nombre','com','aula'])
+        todas.subconjunto({"estado":"Cursa"}).crearTabla("Cursando", ['nombre','com','aula'],"open")
     );
 
     wrap_tabla.appendChild(
-        todas.subconjunto({"estado":"Regular"}).crearTabla("Regulares", ['nombre','añoReg'])
+        todas.subconjunto({"estado":"Regular"}).crearTabla("Regulares", ['nombre','añoReg'],"open")
     );
 
 
 
     for(let i=0; i<=5 ;i++){
         wrap_tabla.appendChild(
-            todas.subconjunto({"nivel":i, "tipo":"Oblig"}).crearTabla((i==0)?'Ingreso':`${i}°Año`, ['nombre','nota','folio','tomo'])
+            todas.subconjunto({"nivel":i, "tipo":"Oblig"}).crearTabla((i==0)?'Ingreso':`${i}°Año`, ['nombre','nota','tomo','folio'])
         );
     }
 
     wrap_tabla.appendChild(
-        todas.subconjunto({"tipo":"Elect"}).crearTabla("Electivas", ['nivel','nombre','nota','folio','tomo','horas'])
+        todas.subconjunto({"tipo":"Elect"}).crearTabla("Electivas", ['nivel','nombre','nota','tomo','folio' ,'horas'])
     );
 
 

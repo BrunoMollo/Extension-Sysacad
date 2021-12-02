@@ -46,7 +46,7 @@ export default class Conjunto_materias extends Array{
     }
 
 
-    crearTabla(texto_titulo,lista_campos){
+    crearTabla(texto_titulo,lista_campos,default_mode){
         
         
         const bloke=document.createElement("div");
@@ -68,8 +68,12 @@ export default class Conjunto_materias extends Array{
             tabla.appendChild(Materia.RenglonVacio(lista_campos));
         }
 
-
-        bloke.style.maxHeight="38px";//en el css lo toma como vacio, asi que lo asigno aca¿?
+        if(default_mode=="open"){
+            bloke.style.maxHeight=(50*tabla.childElementCount)+"px"; 
+        }else{
+            bloke.style.maxHeight="38px";
+        }
+        
         titulo.onclick=(()=>{
             if(bloke.style.maxHeight=="38px"){
                 bloke.style.maxHeight=(50*tabla.childElementCount)+"px";    

@@ -1,9 +1,9 @@
 
-
-
 String.prototype.properCase = function() {
     return this[0].toUpperCase()+ this.substr(1).toLowerCase();
 }
+
+
 export default class Materia{
     constructor(tr){
         this.nivel=tr.children[0].innerHTML;
@@ -12,7 +12,6 @@ export default class Materia{
             this.nombre=dic_incompletas[this.nombre];
         }
         if(/w*(Elec.)/.test(this.nombre)){
-            
             this.tipo="Elect";
             this.nombre=this.nombre.replace('(Elec.)', '');
         }
@@ -52,11 +51,13 @@ export default class Materia{
     }
 
     static Create_td_head(atributo){
-        
-        atributo=atributo.properCase();
 
         const td= document.createElement("td");
         td.classList.add(`td-head`);
+        td.classList.add(`td-head-${atributo}`);
+
+        if(atributo=="añoReg")atributo="Año regular"
+        atributo=atributo.properCase();
         td.innerText=atributo;
         return td;
     }

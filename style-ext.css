@@ -4,13 +4,35 @@
     box-sizing: border-box;
 }
 
+.logo{
+    transform: scale(0.8);
+    position: absolute;
+    top:0
+}
+
+
+
 header{
     height: 50vh;
 }
 
-.textoTabla{
+.wrapper >table{
+    max-width: 1000px;
+}
+
+.bloke > table{
     background-color: white;
 }
+
+.bloke > table > tr >td{
+    padding: 2px;
+    border: black 1px solid;
+    min-width: 44px;
+    min-height: 26px;
+}
+
+
+
 
 .bloke{
     width: 760px;
@@ -18,29 +40,21 @@ header{
     flex-direction: column;
     overflow: hidden;
     max-height: 38px;
-    transition: max-height 100ms ease-in;
+    transition: max-height 120ms ease-in;
 }
 
 
-td{
-    padding: 2px;
-    border: black 2px solid;
-    min-width: 44px;
-    min-height: 26px;
-}
+
+
 
 table{
     display: inline-table;
     transition: 1s all ease;
-    width: 100%;
-    border: black 2px solid;
-    transition: visibility 0s, opacity 0.5s linear;
+    width: 100%;;
 }
 
 
-.bloke > .tituloTabla{
-    transition: 2   00ms ease;
-}
+
 .bloke > .tituloTabla:hover{
     color:lightslategray;
     cursor: pointer;
@@ -49,6 +63,7 @@ table{
 .wrapper{
     display: flex;
     flex-direction: column;
+    align-items: center;
     
 }
 
@@ -69,3 +84,4 @@ table{
 .td-head{
     font-weight: 1000;
 }
+
