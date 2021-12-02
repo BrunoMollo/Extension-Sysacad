@@ -1,9 +1,14 @@
 
+String.prototype.properCase = function() {
+    return this[0].toUpperCase()+ this.substr(1).toLowerCase();
+}
 export default class Materia{
     constructor(tr){
         this.nivel=tr.children[0].innerHTML;
         this.nombre=tr.children[1].innerHTML;
         this.estado=tr.children[2].innerHTML.split(' ')[0];
+        this.plan=tr.children[3].innerHTML;
+
         this.nota='   ';
         this.tomo='   ';
         this.folio='   ';
@@ -19,10 +24,18 @@ export default class Materia{
             }
             
         }
-        this.plan=tr.children[3].innerHTML;
+
+        if(this.estado=="Cursa"){
+            this.com=tr.children[2].innerHTML.split(' ')[2];
+            this.aula=tr.children[2].innerHTML.split(' ')[4];
+        }
+        
     }
 
     static Create_td_head(atributo){
+        
+        atributo=atributo.properCase();
+
         const td= document.createElement("td");
         td.classList.add(`td-head`);
         td.innerText=atributo;
@@ -45,17 +58,27 @@ export default class Materia{
         return td;
     }
 
-    //MOVER A UNA SUBCLASE???
-    renglonAprobada(){
+   
+    renglon(lista_campos){
         const renglon=document.createElement("tr");
         renglon.classList.add("textoTabla");
-        
 
-        renglon.appendChild(this.create_td("nombre"));
-        renglon.appendChild(this.create_td("nota"));
-        renglon.appendChild(this.create_td("folio"));
-        renglon.appendChild(this.create_td("tomo"));
+        lista_campos=lista_campos.map(e=>e.toLowerCase());
+        lista_campos.forEach(atrib=>renglon.appendChild(this.create_td(atrib)));
         
+        return renglon;
+
+    }
+
+    static RenglonVacio(lista_campos){
+        const renglon=document.createElement("tr");
+        renglon.classList.add("textoTabla");
+        for(let i=0;i<lista_campos.length;i++){
+            const td=document.createElement("td");
+            td.innerHTML="&nbsp;";
+            renglon.appendChild(td);
+        }
+
         return renglon;
 
     }

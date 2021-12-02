@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+header{
+    height: 50vh;
+}
+
 .bloke{
     width: 600px;
     display: flex;
@@ -19,8 +23,8 @@
 td{
     padding: 2px;
     border: black 2px solid;
-    margin:0;
     min-width: 44px;
+    min-height: 26px;
 }
 
 table{
@@ -31,6 +35,14 @@ table{
     transition: visibility 0s, opacity 0.5s linear;
 }
 
+
+.bloke > .tituloTabla{
+    transition: 2   00ms ease;
+}
+.bloke > .tituloTabla:hover{
+    color:lightslategray;
+    cursor: pointer;
+}
 
 .wrapper{
     display: flex;

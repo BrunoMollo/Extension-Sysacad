@@ -14,8 +14,16 @@ export function main(){
     wrap.insertBefore(wrap_tabla, document.querySelector(".wrapper>p"));
 
     
+
+    wrap_tabla.appendChild(
+        todas.subconjunto("Cursa","-").crearTabla("Cursando", ['nombre','com','aula'])
+    );
+
+
     for(let i=0; i<=5 ;i++){
-        todas.subconjunto("-",i).TablaAprobadas((i==0)?'Ingreso':`${i}° Año`);
+        wrap_tabla.appendChild(
+            todas.subconjunto("-",i).crearTabla((i==0)?'Ingreso':`${i}° Año`, ['nombre','nota','folio','tomo'])
+        );
     }
 
 
