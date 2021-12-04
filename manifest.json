@@ -16,7 +16,8 @@
     "Materia.js",
     "Conjunto_materias.js",
     "style-ext.css",
-    "diccionario_reemplazo.json"
+    "diccionario_reemplazo.json",
+    "TablaMaterias.js"
  ],
 
 

@@ -1,7 +1,7 @@
 
 
 //Este codigo es para que el script se cargue como type='module', pq sino no puede usar el import
-(async () => {
+async function Load(){
     
   //Importa el css de un archivo
     const linker=document.createElement("link");
@@ -15,4 +15,8 @@
     const src_js = chrome.extension.getURL('./main.js');
     const contentScript = await import(src_js);
     contentScript.main();
-  })();
+  }
+
+
+  Load();
+

@@ -1,4 +1,5 @@
 import Conjunto_materias from "./Conjunto_materias.js";
+import TablaMateria from "./TablaMaterias.js";
 
 
 
@@ -13,7 +14,6 @@ function borrarTablaVieja(){
 export function main(){
 
     let todas=new Conjunto_materias("TODAS");
-
     borrarTablaVieja();
 
     const wrap=document.querySelector(".wrapper");
@@ -21,29 +21,38 @@ export function main(){
     wrap_tabla.classList.add("wrapper-tabla");
     wrap.insertBefore(wrap_tabla, document.querySelector(".wrapper>p"));
 
+
+    //CURSANDO
+    let cursando_tabla=new TablaMateria("Cursando");
+    cursando_tabla.definirCampos(['nombre','com','aula']);
+    cursando_tabla.cargarMaterias(todas.filter({"estado":"Cursa"}));
+    cursando_tabla.insertIn(".wrapper-tabla");
+    cursando_tabla.open(150);
+
     
-
-    wrap_tabla.appendChild(
-        todas.subconjunto({"estado":"Cursa"}).crearTabla("Cursando", ['nombre','com','aula'],"open")
-    );
-
-    wrap_tabla.appendChild(
-        todas.subconjunto({"estado":"Regular"}).crearTabla("Regulares", ['nombre','añoReg'],"open")
-    );
+    //REGULARES
+    let regular_tabla=new TablaMateria("Regular");
+    regular_tabla.definirCampos(['nombre','añoReg']);
+    regular_tabla.cargarMaterias(todas.filter({"estado":"Regular"}));
+    regular_tabla.insertIn(".wrapper-tabla");
+    regular_tabla.open(320);
 
 
-
+    let libreta_tabla=[];
+    //APROBADAS Y LIBRES OBLIG
     for(let i=0; i<=5 ;i++){
-        wrap_tabla.appendChild(
-            todas.subconjunto({"nivel":i, "tipo":"Oblig"}).crearTabla((i==0)?'Ingreso':`${i}°Año`, ['nombre','nota','tomo','folio'])
-        );
+        libreta_tabla[i]=new TablaMateria((i==0)?'Ingreso':`${i}°Año`);
+        libreta_tabla[i].definirCampos(['nombre','nota','tomo','folio']);
+        libreta_tabla[i].cargarMaterias(todas.filter({"nivel":i, "tipo":"Oblig"}));
+        libreta_tabla[i].insertIn(".wrapper-tabla");      
     }
 
-    wrap_tabla.appendChild(
-        todas.subconjunto({"tipo":"Elect"}).crearTabla("Electivas", ['nivel','nombre','nota','tomo','folio' ,'horas'])
-    );
-
-
+    //APROBADAS Y LIBRES ELECT
+    let electivas_tabla=new TablaMateria("Electivas");
+    electivas_tabla.definirCampos(['nivel','nombre','nota','tomo','folio' ,'horas']);
+    electivas_tabla.cargarMaterias(todas.filter({"tipo":"Elect"}));
+    electivas_tabla.insertIn(".wrapper-tabla");
+   
 
 }
 

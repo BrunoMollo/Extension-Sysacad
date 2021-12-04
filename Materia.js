@@ -84,7 +84,7 @@ export default class Materia{
     }
 
 
-    create_td(atributo){
+    #create_td(atributo){
         const td= document.createElement("td");
         td.classList.add(`td-${atributo}`);
         td.innerText=this[atributo];
@@ -97,7 +97,7 @@ export default class Materia{
         renglon.classList.add("textoTabla");
 
         lista_campos=lista_campos.map(e=>e.toLowerCase());
-        lista_campos.forEach(atrib=>renglon.appendChild(this.create_td(atrib)));
+        lista_campos.forEach(atrib=>renglon.appendChild(this.#create_td(atrib)));
         
         return renglon;
 
