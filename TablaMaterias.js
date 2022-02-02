@@ -6,8 +6,6 @@ export default class TablaMateria{
         this.bloke.classList.add("bloke");
         this.bloke.id=texto_titulo;
 
-      
-
         this.titulo=document.createElement("div");
         this.titulo.innerText=texto_titulo;
         this.titulo.classList.add("tituloTabla");
@@ -24,8 +22,6 @@ export default class TablaMateria{
 
     cargarMaterias(conj_materias){
         conj_materias.forEach(materia=>this.tabla.append(materia.renglon(this.campos)));
-        
-      
         this.#completarTabla();
         this.#initClickBehavior();
     }
@@ -53,10 +49,10 @@ export default class TablaMateria{
         this.bloke.style.maxHeight="38px";
         this.titulo.onclick=(()=>{
             if(this.bloke.style.maxHeight=="38px"){
-                this.bloke.style.maxHeight=(50*this.tabla.childElementCount)+"px";    
+                this.bloke.style.maxHeight=(50*this.tabla.childElementCount)+"px"; 
             }
             else
-                this.bloke.style.maxHeight="38px";
+                this.bloke.style.maxHeight="38px";  
             })
     }
 

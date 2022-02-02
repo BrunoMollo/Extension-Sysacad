@@ -25,7 +25,7 @@ export function main(){
     //CURSANDO
     let cursando_tabla=new TablaMateria("Cursando");
     cursando_tabla.definirCampos(['nombre','com','aula']);
-    cursando_tabla.cargarMaterias(todas.filter({"estado":"Cursa"}));
+    cursando_tabla.cargarMaterias(todas.filterMateria({"estado":"Cursa"}));
     cursando_tabla.insertIn(".wrapper-tabla");
     cursando_tabla.open(150);
 
@@ -33,26 +33,35 @@ export function main(){
     //REGULARES
     let regular_tabla=new TablaMateria("Regular");
     regular_tabla.definirCampos(['nombre','añoReg']);
-    regular_tabla.cargarMaterias(todas.filter({"estado":"Regular"}));
+    regular_tabla.cargarMaterias(todas.filterMateria({"estado":"Regular"}));
     regular_tabla.insertIn(".wrapper-tabla");
     regular_tabla.open(320);
 
 
     let libreta_tabla=[];
-    //APROBADAS Y LIBRES OBLIG
+    //APROBADAS Y LIBRES OBLIGATORIAS
     for(let i=0; i<=5 ;i++){
         libreta_tabla[i]=new TablaMateria((i==0)?'Ingreso':`${i}°Año`);
         libreta_tabla[i].definirCampos(['nombre','nota','tomo','folio']);
-        libreta_tabla[i].cargarMaterias(todas.filter({"nivel":i, "tipo":"Oblig"}));
+        libreta_tabla[i].cargarMaterias(todas.filterMateria({"nivel":i, "tipo":"Oblig"}));
         libreta_tabla[i].insertIn(".wrapper-tabla");      
     }
 
     //APROBADAS Y LIBRES ELECT
     let electivas_tabla=new TablaMateria("Electivas");
     electivas_tabla.definirCampos(['nivel','nombre','nota','tomo','folio' ,'horas']);
-    electivas_tabla.cargarMaterias(todas.filter({"tipo":"Elect"}));
+    electivas_tabla.cargarMaterias(todas.filterMateria({"tipo":"Elect"}));
     electivas_tabla.insertIn(".wrapper-tabla");
-   
 
+
+    //PROMEDIO
+    let notas=
+        todas
+        .filterMateria({"estado":"Aprobada"})
+        .map(materia=>parseInt(materia.nota))
+        .filter(nota=>!isNaN(nota))
+        
+    let suma=notas.reduce((acum, current)=>acum+current)
+   console.log(`Promedio: ${Math.round(suma*100/notas.length)/100}`)
 }
 

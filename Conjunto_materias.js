@@ -20,7 +20,7 @@ export default class Conjunto_materias extends Array{
  
 
 
-    filter(filtro){
+    filterMateria(filtro){
         let sub=[...this];
 
         Object.entries(filtro).forEach(

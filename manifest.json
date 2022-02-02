@@ -9,6 +9,9 @@
     "128": "utn.png"
   },
 
+  "permissions": [
+    "storage"
+  ],
 
 
   "web_accessible_resources": [
@@ -27,7 +30,7 @@
       "matches": ["https://www.alumnos.frro.utn.edu.ar/estadoAcademico.asp*"],
       "js": ["mainLoader.js"]
     },
- 
+
     {
       "run_at": "document_end",
       "matches": ["file:///C:/Users/Bruno/Desktop/EsadoAcademico%20Local/Estado%20acad%C3%A9mico.html"],

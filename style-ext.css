@@ -53,6 +53,7 @@ table{
 .bloke > .tituloTabla:hover{
     color:lightslategray;
     cursor: pointer;
+    user-select: none;
 }
 
 .bloke > table{
