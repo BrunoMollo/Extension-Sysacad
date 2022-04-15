@@ -1,6 +1,6 @@
-import Materia from "./Materia.js";
 
 export default class TablaMateria{
+
     constructor(texto_titulo){
         this.bloke=document.createElement("div");
         this.bloke.classList.add("bloke");
@@ -16,7 +16,7 @@ export default class TablaMateria{
     definirCampos(lista_campos){
         this.campos=lista_campos;
         this.tabla=document.createElement("table");
-        this.tabla.append(Materia.Create_head(lista_campos));
+        this.tabla.append(this.#Create_head(lista_campos));
         this.bloke.appendChild(this.tabla);
     }
 
@@ -38,9 +38,46 @@ export default class TablaMateria{
         container.append(this.bloke);
     }
 
+//Privadas---------------------------------------------------------------------------------------------------
+
+    #Create_td_head(atributo){
+        
+        const td= document.createElement("td");
+        td.classList.add(`td-head`);
+        td.classList.add(`td-head-${atributo}`);
+
+        if(atributo=="añoReg")atributo="Año regular"
+        atributo=atributo.properCase();
+        td.innerText=atributo;
+        return td;
+    }
+
+  #Create_head(atributos){
+        const head=document.createElement("tr")
+        atributos.forEach(atri => {
+            head.appendChild(this.#Create_td_head(atri));
+        });
+        return head;
+    }
+
+
+    #renglonVacio(lista_campos){
+        const renglon=document.createElement("tr");
+        renglon.classList.add("textoTabla");
+        for(let i=0;i<lista_campos.length;i++){
+            const td=document.createElement("td");
+            td.innerHTML="&nbsp;";
+            renglon.appendChild(td);
+        }
+
+        return renglon;
+
+    }
+
+
     #completarTabla(){
         while(this.tabla.childElementCount<4 ){
-            this.tabla.append(Materia.RenglonVacio(this.campos));
+            this.tabla.append(this.#renglonVacio(this.campos));
         }
     }
 
@@ -55,7 +92,6 @@ export default class TablaMateria{
                 this.bloke.style.maxHeight="38px";  
             })
     }
-
 
 
 

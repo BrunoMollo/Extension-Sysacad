@@ -15,8 +15,8 @@
 
 
   "web_accessible_resources": [
-    "main.js",
-    "Materia.js",
+    "mainEstadoAcad.js",
+    "Materias/*",
     "Conjunto_materias.js",
     "style-ext.css",
     "diccionario_reemplazo.json",

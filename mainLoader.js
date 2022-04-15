@@ -12,7 +12,7 @@ async function Load(){
 
 
     //importa js
-    const src_js = chrome.extension.getURL('./main.js');
+    const src_js = chrome.extension.getURL('./mainEstadoAcad.js');
     const contentScript = await import(src_js);
     contentScript.main();
   }
