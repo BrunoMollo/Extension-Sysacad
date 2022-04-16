@@ -15,11 +15,10 @@
 
 
   "web_accessible_resources": [
-    "mainEstadoAcad.js",
+    "Mains/*",
     "Materias/*",
     "Conjunto_materias.js",
     "style-ext.css",
-    "diccionario_reemplazo.json",
     "TablaMaterias.js"
  ],
 
@@ -28,13 +27,24 @@
     {
       "run_at": "document_end",
       "matches": ["https://www.alumnos.frro.utn.edu.ar/estadoAcademico.asp*"],
-      "js": ["mainLoader.js"]
+      "css":["style-ext.css"],
+      "js": ["mainLoaders/LoaderEstadoAcad.js"]
     },
 
     {
       "run_at": "document_end",
       "matches": ["file:///C:/Users/Bruno/Desktop/EsadoAcademico%20Local/Estado%20acad%C3%A9mico.html"],
-      "js": ["mainLoader.js"]
+      "css":["style-ext.css"],
+      "js": ["mainLoaders/LoaderEstadoAcad.js"]
+      
+    },
+
+    {
+      "run_at": "document_end",
+      "matches": ["file:///C:/Users/Bruno/Desktop/EsadoAcademico%20Local/Inscripci%C3%B3n%20a%20cursado.html"],
+      "css":["style-ext.css"],
+      "js": ["mainLoaders/LoaderInscripcionCursado.js"]
+      
     }
 
   ]

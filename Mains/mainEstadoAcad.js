@@ -1,5 +1,5 @@
-import Conjunto_materias from "./Conjunto_materias.js";
-import TablaMateria from "./TablaMaterias.js";
+import Conjunto_materias from "../Conjunto_materias.js";
+import TablaMateria from "../TablaMaterias.js";
 
 
 
@@ -9,12 +9,10 @@ function borrarTablaVieja(){
 }
 
 
-
 //Tengo que hacer una fucnion principal y expostral para poder  modularizar el codigo
 export function main(){
 
     let todas=new Conjunto_materias(Conjunto_materias.ESTADO_ACADEMICO);
-    console.log(todas.filter(m=>m.nivel==2 && m.tipo=="Oblig"))
     borrarTablaVieja();
 
     const wrap=document.querySelector(".wrapper");

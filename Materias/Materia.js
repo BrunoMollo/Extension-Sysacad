@@ -38,7 +38,7 @@ export default class Materia{
     #create_td(atributo){
         const td= document.createElement("td");
         td.classList.add(`td-${atributo}`);
-        td.innerText=this[atributo];
+        td.innerHTML=this[atributo];
         return td;
     }
 
